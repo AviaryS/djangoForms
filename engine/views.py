@@ -27,12 +27,12 @@ def order(request):
         street = request.POST.get('street', None)
         number_of_house = request.POST.get('number_of_house', None)
 
-        result = f"""{first_name} {last_name}, проверьте адрес доставки:
-        {country}
-        {city}
-        {street} {number_of_house}
+        result = f"""<p>{first_name} {last_name}, проверьте адрес доставки:</p>
+        <p>{country}</p>
+        <p>{city}</p>
+        <p>{street} {number_of_house}</p>
         """
-        return HttpResponse(f'<p>{result}</p>')
+        return HttpResponse(result)
     else:
         Form = OrderForm()
         return render(request, 'engine/order.html', {'form': Form})
