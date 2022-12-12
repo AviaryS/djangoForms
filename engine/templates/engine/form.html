@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="main">
+            <div class="main__left">
+                <form action="appointment/" method="post" class="form">
+                    {% csrf_token %}
+                    <h1 class="form__title">Make an appointment</h1>
+                    <div class="form__row">
+                        <input type="text" placeholder="Name" name="name" class="form__input">
+                        <input type="email" placeholder="Email" name="email" class="form__input">
+                    </div>
+                    <div class="form__row">
+                        <input type="tel" placeholder="Phone Number" name="phone" class="form__input">
+                        <input type="text" placeholder="Select Service" name="service" class="form__input">
+                    </div>
+                    <textarea class="form__textarea" placeholder="Tell us about the car needing service(s)" name="text"></textarea>
+                    <button type="submit" class="form__button"><p>Make an Appointment</p></button>
+                </form>
+            </div>
+            <div class="main__right">
+                <h2 class="main__right-title">Maxime placeat facere <br> possimus omnis</h2>
+                <p class="main__right-number">17k</p>
+                <p class="main__right-text">customers served (and counting)</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
